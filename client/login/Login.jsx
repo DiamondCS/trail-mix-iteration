@@ -29,11 +29,11 @@ const Login = (props) => {
     fetch("/login", options)
       .then(res => res.json())
       .then(res => {
-        if (res.verified) {
+        if (res) {
           props.setUsername(username);
           setUsername('');
           setPassword('');
-          props.setIsLoggedIn(res.verified);
+          props.setIsLoggedIn(res);
         }
       })
       .catch(err => console.error(err));

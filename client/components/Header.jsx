@@ -15,8 +15,6 @@ import { useState } from "react";
 const Header = (props) => {
   const [searchInput, setSearchInput] = useState('');
 
-  const username = 'User'; // can update to match the username of the user
-
   const handleChange = (event) => {
     setSearchInput(event.target.value);
   };
@@ -35,7 +33,7 @@ const Header = (props) => {
   return (
     <div className="header">
       <img src="../../assets/trail-mix-logo-small.jpg" className='logo'/><br />
-      <p>Hello {username}!</p>
+      <p>Hello {props.username}!</p>
       <form onSubmit={handleSubmit}>
         <label>
           Location:
