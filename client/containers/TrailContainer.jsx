@@ -25,7 +25,7 @@ const TrailContainer = (props) => {
     setAuthor('');
   }
 
-  let comments = [];
+  const comments = [];
 
   if (props.comments) {
     comments = props.comments.map((cur, idx) => (

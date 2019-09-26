@@ -24,8 +24,7 @@ const ListContainer = (props) => {
       id = {trail.id}
       trailData = {props.trailData}
       getTrail = {props.getTrail}
-      setDiffKey = {props.setDiffKey}
-      diffKey = {props.diffKey}
+      showKey={props.showKey}
     />
   ));
   return (

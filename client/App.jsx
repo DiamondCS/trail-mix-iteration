@@ -8,7 +8,6 @@
  *
  * ************************************
  */
-
 import React, { useState, useEffect } from 'react';
 import MainContainer from "./containers/MainContainer.jsx";
 import TrailContainer from './containers/TrailContainer.jsx';
@@ -31,9 +30,9 @@ const App = () => {
 
     //invoked by on-click function in TrailDisplay, sets selected trail in state
   const getTrail = (id) => {
-    for (let i = 0; i < trailData.length; i += 1) {
-      if (trailData[i].id === +id) {
-        setSelectedTrail(trailData[i]);
+    for (let i = 0; i < trailsData.length; i += 1) {
+      if (trailsData[i].id === +id) {
+        setSelectedTrail(trailsData[i]);
         break;
       }
     }
@@ -78,6 +77,11 @@ const App = () => {
   const displayTrail = (selectedHike) => {
     setSelectedTrail(selectedHike);
   }
+    
+  //toggle that is invoked when clicking on the "difficulty" in the list items
+  const showKey = () => {
+    setDiffKey(diffKey ? false : true);
+  };
 
   //renders MainContainer and conditionally renders TrailContainer
   return (
@@ -88,7 +92,7 @@ const App = () => {
         getTrail={getTrail}
         selectedTrail={selectedTrail}
         displayTrail={displayTrail}
-        setDiffKey={setDiffKey}
+        showKey={showKey}
         diffKey={diffKey}
       />
       {selectedTrail

@@ -26,8 +26,8 @@ const MainContainer = (props) => (
     <ListContainer 
       trailData={props.trailData} 
       getTrail={props.getTrail}
-      setDiffKey={props.setDiffKey}
-      diffKey={props.diffKey}
+      showKey={props.showKey}
+      diffKey={props.diffKey} 
     />
     {/* conditional renders difficulty key overlay */}
     {props.diffKey && (
