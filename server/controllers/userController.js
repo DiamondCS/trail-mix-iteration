@@ -87,7 +87,7 @@ userController.findUsername = async (req, res, next) => {
     const { rows } = await db.query(query);
     res.locals.username = rows[0].username;
     return next();
-  } catch (error) {
+  } catch (err) {
     return next({
       log: `findUsername error: ${err}`,
     });
