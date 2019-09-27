@@ -27,8 +27,10 @@ const App = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        setIsLoggedIn(data.isLoggedIn);
-        if (isLoggedIn) setUsername(data.username);
+        if (data.isLoggedIn) {
+          setUsername(data.username);
+          setIsLoggedIn(data.isLoggedIn);
+        }
       })
       .catch(err => console.error(err));
   }, []);
@@ -37,7 +39,7 @@ const App = () => {
   return (
     <div className='appContainer'>
       {isLoggedIn
-        && <MainContainer 
+        && <MainContainer
           className='mainContainer'
           username={username}
         />

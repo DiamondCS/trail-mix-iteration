@@ -50,8 +50,7 @@ const TrailContainer = (props) => {
       <CommentsDisplay
         key = {idx}
         comment = {cur.comment}
-        trailId = {cur.trailId}
-        getTrail = {props.getTrail}
+        username = {cur.username}
       />
     ));
   }

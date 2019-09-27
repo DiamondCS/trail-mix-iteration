@@ -48,7 +48,7 @@ const MainContainer = (props) => {
   };
   return (
     <div id="main-container">
-      <Header />
+      <Header username={props.username}/>
       <MapDisplay 
         id="map-display"
         trailData={trailData}
